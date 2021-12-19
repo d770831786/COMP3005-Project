@@ -2,7 +2,7 @@
 
 Instructions:
 1. First download node.js from google. It is required for this project to work. Download link: "https://nodejs.org/en/download/"
-2. Next download the file proejct file and extract.
+2. Next download the proejct file and extract.
 3. Open the command prompt and "cd" into the backend folder under the store folder.
 4. Enter "npm install" in the command prompt.
 5. Enter "npm start" in the command prompt.
