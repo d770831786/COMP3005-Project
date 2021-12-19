@@ -1,0 +1,19 @@
+extends ../includes/layout
+
+block content
+    div(class='container-fluid')
+        h1 Book List
+        each book in books
+            div(class='card')
+                div(class='card-body')
+                    h5(class='card-title') #{book.title}
+                    p(class='card-text')
+                        | Author: #{book.author}
+                        br
+                        | Genre: #{book.genre}
+                        br
+                        | ISBN: #{book.isbn}
+                    form(action='/delbook' method='post')
+                        a(href=`/book/${book.isbn}` class='btn btn-primary btn-md') Book Details
+                        if session.auth
+                            button(type='submit' class='btn btn-danger btn-md' name='isbn' value=`${book.isbn}`) Remove

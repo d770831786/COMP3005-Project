@@ -1,0 +1,22 @@
+extends ../includes/layout
+
+block content
+    div(class='container-fluid')
+        h1
+            span(class='badge badge-primary') Book
+            |  
+            | #{book.title}
+        div(class='card' style='width: 24rem;')
+            img(src='/images/face.jpg' class='card-img-top' alt='face')
+            div(class='card-body')
+                h5(class='card-title') #{book.title}
+                p(class='card-text')
+                    | Author: #{book.author}
+                    br
+                    | Genre: #{book.genre}
+                    br
+                    | ISBN: #{book.isbn}
+                form(action='/delbook' method='post')
+                    a(href=`#` class='btn btn-primary') Buy
+                    if session.auth
+                        button(type='submit' class='btn btn-danger btn-md' name='isbn' value=`${book.isbn}`) Remove

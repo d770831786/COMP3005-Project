@@ -1,0 +1,33 @@
+extends ../includes/layout
+
+block content
+    div(class='container-fluid p-0')
+        div(id='libraries' class='carousel slide' data-ride='carousel')
+            ol(class='carousel-indicators')
+                li(data-target='#libraries' data-slide-to='0' class='active')
+                li(data-target='#libraries' data-slide-to='1')
+                li(data-target='#libraries' data-slide-to='2')
+            div(class='carousel-inner' style='width:100%; max-height: 49vh')
+                    div(class='carousel-item active')
+                    img(src='/images/bookstore.jpg' class='d-block w-100' alt='library')
+            a(class='carousel-control-prev' href='#libraries' role='button' data-slide='prev')
+                span(class='carousel-control-prev-icon' aria-hidden='true')
+                span(class='sr-only') Previous
+            a(class='carousel-control-next' href='#libraries' role='button' data-slide='next')
+                span(class='carousel-control-next-icon' aria-hidden='true')
+                span(class='sr-only') Next
+        div(class='jumbotron jumbotron-fluid mb-0')
+            div(class='container')
+                h1(class='display-4') online bookstore
+                p(class='lead') Welcome to the online bookstore
+                hr(class='my-4')
+                p
+
+                    unless session.loggedin
+                        button(type='button' class='btn btn-secondary btn-lg' data-toggle='modal' data-target='#login') Login
+                        |  
+                        a(class='btn btn-secondary btn-lg' href='/register' role='button') Register
+                    a(class='btn btn-primary btn-lg' href='/books' role='button') Book List
+                    |
+                    a(class='btn btn-primary btn-lg' href='/search' role='button') Book Search
+                    |

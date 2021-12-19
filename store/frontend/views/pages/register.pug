@@ -1,0 +1,64 @@
+extends ../includes/layout
+
+block content
+    div(class='container-fluid')
+        h1 Register
+        form(action='/register' method='post' class='needs-validation')
+            div(class='form-row')
+                div(class='col-md-3 mb-3')
+                    label(for='username') Username
+                    div(class='input-group')
+                        div(class='input-group-prepend')
+                            span(class='input-group-text' id='prepend') @
+                        input(type='text' class='form-control' id='username' name='username'  aria-describedby='prepend' required)
+                div(class='col-md-3 mb-3')
+                    label(for='password') Password
+                    input(type='password' class='form-control' id='password' name='password'  required)
+            div(class='form-row')
+                div(class='col-md-3 mb-3')
+                    label(for='first_name') First Name
+                    input(class='form-control' id='first_name' name='first_name'  required)
+                div(class='col-md-3 mb-3')
+                    label(for='last_name') Last Name
+                    input(class='form-control' id='last_name' name='last_name'  required)
+            div(class='form-row')
+                div(class='col-md-6 mb-3')
+                    label(for='email') Email
+                    input(class='form-control' id='email' name='email'  required)
+            div(class='form-row')
+                div(class='col-md-2 mb-3')
+                    label(for='phone_number') Phone Number
+                    input(class='form-control' id='phone_number' name='phone_number'  required)
+                div(class='col-md-2 mb-3')
+                    label(for='gender') Gender
+                    select(class='form-control' id='gender' name='gender' required)
+                        option(value='m') Male
+                        option(value='f') Female
+                        option(value='o') Other
+                div(class='col-md-2 mb-3')
+                    label(for='age') Age
+                    input(class='form-control' id='age' name='age'  required)
+            div(class='form-row')
+                div(class='col-md-2 mb-3')
+                    label(for='street_number') Street Number
+                    input(class='form-control' id='street_number' name='street_number'  required)
+                div(class='col-md-4 mb-3')
+                    label(for='street_name') Street Name
+                    input(class='form-control' id='street_name' name='street_name'  required)
+            div(class='form-row')
+                div(class='col-md-2 mb-3')
+                    label(for='city') City
+                    input(class='form-control' id='city' name='city'  required)
+                div(class='col-md-2 mb-3')
+                    label(for='province') Province
+                    select(class='form-control' id='province' name='province' required)
+                        option Beijing
+
+                        option(selected='selected') Shanghai
+                        option Hubei
+                        option Sichuan
+                div(class='col-md-2 mb-3')
+                    label(for='postal_code') Postal Code
+                    label(for='postal_code') Postal Code
+                    input(class='form-control' id='postal_code' name='postal_code'  required)
+            button(type='submit' class='btn btn-primary') Register
