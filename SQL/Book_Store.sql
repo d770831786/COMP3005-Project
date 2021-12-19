@@ -12,8 +12,6 @@
  Target Server Type    : PostgreSQL
  Target Server Version : 90514
  File Encoding         : 65012
-
- Date: 07/12/2021 19:34:48
 */
 
 
